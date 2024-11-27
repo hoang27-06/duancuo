@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>em đăng nhập vô có bất ngờ</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        text-align: center;
+        color: #333;
+      }
+      .hidden {
+        display: none;
+      }
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        margin-top: 50px;
+        text-align: center;
+      }
+      input {
+        padding: 10px;
+        margin: 15px 0;
+        border: 2px solid #ff6f61;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 300px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #ff6f61;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #e55d50;
+      }
+      h1,
+      h2 {
+        color: #ff6f61;
+      }
+      img {
+        margin-top: 20px;
+        max-width: 80%;
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Phần Đăng nhập -->
+    <div id="login-section" class="card">
+      <h1>em cứ đăng nhập vô ik cs bất ngờ</h1>
+      <p>mời bé nhập mật khẩu ạ</p>
+      <input
+        type="password"
+        id="password"
+        placeholder="hãy nhập mật khẩu nào...."
+      />
+      <button onclick="verifyPassword()">Đăng nhập</button>
+    </div>
+
+    <!-- Phần Thiệp chúc mừng -->
+    <div id="greeting-section" class="hidden card">
+      <h1>mai là 1 ngày rất quan trọng á 🎉</h1>
+      <h2>🎂 em cứ nhập mật khẩu vô ik 🎂</h2>
+    </div>
+
+    <script>
+      function verifyPassword() {
+        const password = document.getElementById("password").value;
+        const correctPassword = "28/11/2008"; // Thay bằng mật khẩu bạn muốn
+        if (password === correctPassword) {
+          // nếu đúng, chuyển hướng sai trang tiếp theo
+          window.location.href = "./11.html"; // thay đổi URL này theo yêu cầu
+          document.getElementById("login-section").classList.add("hidden");
+          document
+            .getElementById("greeting-section")
+            .classList.remove("hidden");
+        } else {
+          // nếu sai thông báo lỗi
+          alert("Sai mật khẩu rồi! Thử lại nhé!");
+        }
+      }
+    </script>
+  </body>
+</html>
